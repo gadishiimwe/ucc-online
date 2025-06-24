@@ -11,7 +11,7 @@ const Hero = () => {
         }}
       >
         <div className="text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg mt-16 md:mt-0">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
             Welcome to United Christian Church
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white drop-shadow-md">
