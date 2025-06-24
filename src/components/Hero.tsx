@@ -2,12 +2,13 @@ import { useEffect } from 'react';
 
 const Hero = () => {
   return (
-    <div className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white">
-      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+    <div className="relative bg-gradient-to-r from-black to-blue-950 text-white">
+      <div className="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
       <div 
         className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
         style={{
-          backgroundImage: `url('/images/ucconline___14030707_191543248.jpg')`
+          backgroundImage: `url('/images/ucconline___14030707_191543248.jpg')`,
+          backgroundBlendMode: 'multiply'
         }}
       >
         <div className="text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full">
