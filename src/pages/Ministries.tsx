@@ -1,4 +1,3 @@
-
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 
@@ -7,37 +6,37 @@ const Ministries = () => {
     {
       name: "Youth Ministry",
       description: "Empowering young people to grow in faith through engaging activities, mentorship, and biblical teaching.",
-      image: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: "/images/ucconline___14030707_191402737.jpg",
       contact: "Pastor Mary Johnson"
     },
     {
       name: "Women's Ministry",
       description: "Creating a supportive community where women can grow spiritually, build friendships, and serve together.",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: "/images/ucconline___14030707_191402771.jpg",
       contact: "Sarah Wilson"
     },
     {
       name: "Men's Ministry",
       description: "Building brotherhood and spiritual growth through Bible study, fellowship, and community service.",
-      image: "https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: "/images/ucconline___14030707_191402796.jpg",
       contact: "David Thompson"
     },
     {
       name: "Children's Ministry",
       description: "Nurturing young hearts with age-appropriate Bible lessons, crafts, and activities in a safe, loving environment.",
-      image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: "/images/ucconline___14030707_191402817.jpg",
       contact: "Lisa Brown"
     },
     {
       name: "Worship Ministry",
       description: "Leading the congregation in heartfelt worship through music, vocals, and technical support.",
-      image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: "/images/ucconline___14030707_191402830.jpg",
       contact: "Michael Davis"
     },
     {
       name: "Outreach Ministry",
       description: "Serving our community through food drives, mission trips, and local partnerships.",
-      image: "https://images.uns  plash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      image: "/images/ucconline___14030707_191402845.jpg",
       contact: "Pastor John Smith"
     }
   ];
@@ -47,7 +46,11 @@ const Ministries = () => {
       <Navigation />
       
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16">
+      <div className="text-white py-32" style={{
+        backgroundImage: `url('/images/ucconline___14030707_191708224.jpg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold text-center">Ministries</h1>
           <p className="text-center text-blue-100 mt-4 text-lg">

@@ -1,4 +1,3 @@
-
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Calendar, MapPin } from 'lucide-react';
@@ -44,7 +43,11 @@ const Events = () => {
       <Navigation />
       
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16">
+      <div className="text-white py-32" style={{
+        backgroundImage: `url('/images/ucconline___14030707_191708224.jpg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold text-center">Events</h1>
           <p className="text-center text-blue-100 mt-4 text-lg">

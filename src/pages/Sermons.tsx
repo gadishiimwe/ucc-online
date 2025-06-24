@@ -1,4 +1,3 @@
-
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Play, Download, Search, Calendar, User } from 'lucide-react';
@@ -27,7 +26,7 @@ const Sermons = () => {
       series: "faith-journey",
       tags: ["faith", "daily living", "trust"],
       downloads: 245,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "/images/ucconline___14030707_191402872.jpg"
     },
     {
       title: "Love Without Limits",
@@ -39,7 +38,7 @@ const Sermons = () => {
       series: "love-series",
       tags: ["love", "community", "relationships"],
       downloads: 189,
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "/images/ucconline___14030707_191402896.jpg"
     },
     {
       title: "Finding Hope in Difficult Times",
@@ -51,7 +50,7 @@ const Sermons = () => {
       series: "hope-series",
       tags: ["hope", "trials", "perseverance"],
       downloads: 312,
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "/images/ucconline___14030707_191402909.jpg"
     },
     {
       title: "The Gift of Grace",
@@ -63,7 +62,7 @@ const Sermons = () => {
       series: "christmas",
       tags: ["grace", "transformation", "christmas"],
       downloads: 156,
-      image: "https://images.unsplash.com/photo-1438032005730-c779502df39b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "/images/ucconline___14030707_191402922.jpg"
     },
     {
       title: "Building Strong Families",
@@ -75,7 +74,7 @@ const Sermons = () => {
       series: "faith-journey",
       tags: ["family", "relationships", "biblical principles"],
       downloads: 278,
-      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "/images/ucconline___14030707_191407298.jpg"
     },
     {
       title: "The Power of Prayer",
@@ -87,7 +86,7 @@ const Sermons = () => {
       series: "faith-journey",
       tags: ["prayer", "spiritual disciplines", "communion with God"],
       downloads: 201,
-      image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+      image: "/images/ucconline___14030707_191407323.jpg"
     }
   ];
 
@@ -105,9 +104,11 @@ const Sermons = () => {
       
       {/* Header */}
       <div 
-        className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white py-20"
+        className="relative text-white py-32"
         style={{
-          backgroundImage: `linear-gradient(rgba(30,64,175,0.8), rgba(29,78,216,0.8)), url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
+          backgroundImage: `url('/images/ucconline___14030707_191708224.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -151,20 +152,17 @@ const Sermons = () => {
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Latest Message</h2>
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-lg shadow-xl overflow-hidden">
-              <div className="aspect-video bg-gray-200 flex items-center justify-center relative">
-                <img 
-                  src={sermons[0].image}
-                  alt={sermons[0].title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 bg-white bg-opacity-90 rounded-full flex items-center justify-center mx-auto mb-4 cursor-pointer hover:bg-opacity-100 transition-all">
-                      <Play className="text-blue-800 text-2xl ml-1" />
-                    </div>
-                    <p className="text-white text-lg font-semibold">Watch Sermon</p>
-                  </div>
-                </div>
+              <div className="aspect-video bg-black flex items-center justify-center relative">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/iyd9cNRwbkQ"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="w-full h-full rounded-none"
+                ></iframe>
               </div>
               <div className="p-8">
                 <div className="flex items-center mb-4 text-sm text-gray-600">

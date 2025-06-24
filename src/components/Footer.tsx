@@ -1,4 +1,3 @@
-
 import { Mail, MapPin, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -38,11 +37,11 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center">
                 <MapPin className="w-5 h-5 mr-3 text-blue-300" />
-                <span className="text-blue-100">123 Faith Street, Your City, State 12345</span>
+                <span className="text-blue-100">Kigali, RWANDA Gikondo-merez</span>
               </div>
               <div className="flex items-center">
                 <Mail className="w-5 h-5 mr-3 text-blue-300" />
-                <span className="text-blue-100">info@unitedchristianchurch.org</span>
+                <a href="mailto:info@unitedchristianchurch.org" className="text-blue-100 hover:text-white underline">info@unitedchristianchurch.org</a>
               </div>
               <div className="flex items-center">
                 <Calendar className="w-5 h-5 mr-3 text-blue-300" />

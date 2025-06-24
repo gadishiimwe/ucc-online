@@ -1,4 +1,3 @@
-
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Award, Users, Heart, Globe } from 'lucide-react';
@@ -9,7 +8,7 @@ const About = () => {
       name: "Pastor John Smith",
       title: "Senior Pastor",
       bio: "Pastor John has been leading UCC for over 15 years with a passion for biblical teaching and community outreach. He holds a Master of Divinity from Dallas Theological Seminary and has authored several books on Christian living.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: "/images/ucconline___14030707_191543282.jpg",
       education: "M.Div, Dallas Theological Seminary",
       experience: "15+ years in ministry"
     },
@@ -17,7 +16,7 @@ const About = () => {
       name: "Pastor Mary Johnson",
       title: "Associate Pastor",
       bio: "Pastor Mary specializes in youth ministry and women's programs, bringing energy and heart to our community. She has a background in counseling and has been instrumental in developing our family support programs.",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: "/images/ucconline___14030707_191543295.jpg",
       education: "M.A. in Counseling Psychology",
       experience: "10+ years in ministry"
     },
@@ -25,7 +24,7 @@ const About = () => {
       name: "Minister David Thompson",
       title: "Music Director",
       bio: "David leads our worship team and has been serving in music ministry for over 20 years. His passion for worship creates an atmosphere where people can truly connect with God.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: "/images/ucconline___14030707_191543248.jpg",
       education: "B.A. in Music Ministry",
       experience: "20+ years in worship ministry"
     },
@@ -33,7 +32,7 @@ const About = () => {
       name: "Sarah Wilson",
       title: "Children's Director",
       bio: "Sarah oversees all children's programs and has a heart for seeing young hearts discover Jesus. She's a certified elementary educator with a passion for creative Bible teaching.",
-      image: "https://images.unsplash.com/photo-1594736797933-d0daac2a315c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      image: "/images/ucconline___14030707_191543282.jpg",
       education: "B.Ed in Elementary Education",
       experience: "8+ years in children's ministry"
     }
@@ -105,9 +104,11 @@ const About = () => {
       
       {/* Header */}
       <div 
-        className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white py-24"
+        className="relative text-white py-32"
         style={{
-          backgroundImage: `linear-gradient(rgba(30,64,175,0.8), rgba(29,78,216,0.8)), url('https://images.unsplash.com/photo-1438032005730-c779502df39b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
+          backgroundImage: `url('/images/ucconline___14030707_191708224.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -136,7 +137,7 @@ const About = () => {
             </div>
             <div>
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                src="/images/ucconline___14030707_191543282.jpg"
                 alt="Church community"
                 className="rounded-lg shadow-lg w-full h-80 object-cover"
               />
@@ -146,7 +147,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-16">
             <div className="order-2 md:order-1">
               <img 
-                src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                src="/images/ucconline___14030707_191543295.jpg"
                 alt="Community service"
                 className="rounded-lg shadow-lg w-full h-80 object-cover"
               />

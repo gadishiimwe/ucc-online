@@ -1,4 +1,3 @@
-
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import { Mail, MapPin, Calendar } from 'lucide-react';
@@ -146,9 +145,8 @@ const Contact = () => {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Visit Us</h3>
                     <p className="text-gray-700">
-                      123 Faith Street<br />
-                      Your City, State 12345<br />
-                      United States
+                      Kigali, RWANDA<br />
+                      Gikondo-merez
                     </p>
                   </div>
                 </div>
@@ -161,7 +159,8 @@ const Contact = () => {
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">Email Us</h3>
                     <p className="text-gray-700">
                       info@unitedchristianchurch.org<br />
-                      pastor@unitedchristianchurch.org
+                      pastor@unitedchristianchurch.org<br />
+                      <span className='block mt-2 font-bold'>Phone: +250788 674 367</span>
                     </p>
                   </div>
                 </div>
@@ -184,12 +183,17 @@ const Contact = () => {
               {/* Map Placeholder */}
               <div className="mt-8">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Find Us</h3>
-                <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-                  <div className="text-center text-gray-600">
-                    <MapPin className="w-12 h-12 mx-auto mb-2" />
-                    <p>Interactive Map</p>
-                    <p className="text-sm">Google Maps integration available</p>
-                  </div>
+                <div className="rounded-lg overflow-hidden shadow-lg" style={{height: '300px'}}>
+                  <iframe
+                    title="Kigali Gikondo Map"
+                    src="https://www.google.com/maps?q=Kigali%2C%20Gikondo&output=embed"
+                    width="100%"
+                    height="300"
+                    style={{border:0}}
+                    allowFullScreen={true}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
                 </div>
               </div>
             </div>
