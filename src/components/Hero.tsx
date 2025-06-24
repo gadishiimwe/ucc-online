@@ -24,6 +24,22 @@ const Hero = () => {
               Learn More
             </button>
           </div>
+          
+          {/* Statistics Section */}
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6">
+              <h3 className="text-3xl font-bold mb-2">500+</h3>
+              <p className="text-blue-100">Active Members</p>
+            </div>
+            <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6">
+              <h3 className="text-3xl font-bold mb-2">15+</h3>
+              <p className="text-blue-100">Years of Service</p>
+            </div>
+            <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6">
+              <h3 className="text-3xl font-bold mb-2">12</h3>
+              <p className="text-blue-100">Active Ministries</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
