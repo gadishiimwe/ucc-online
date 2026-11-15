@@ -1,31 +1,22 @@
-import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Play, MapPin } from 'lucide-react';
 
-const Hero = () => {
-  return (
-    <div className="relative bg-gradient-to-r from-black to-blue-950 text-white">
-      <div className="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
-      <div 
-        className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
-        style={{
-          backgroundImage: `url('/images/ucconline___14030707_191543248.jpg')`,
-          backgroundBlendMode: 'multiply'
-        }}
-      >
-        <div className="text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
-            Welcome to United Christian Church
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 text-white drop-shadow-md">
-            Building faith, strengthening families, and serving our community with God's love
-          </p>
-          <div className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
-            <a href="/events" className="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 w-full sm:w-auto inline-block">Join Us Sunday</a>
-            <a href="/about" className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition-colors duration-200 w-full sm:w-auto inline-block">Learn More</a>
-          </div>
-        </div>
+const Hero = () => (
+  <section className="ucc-hero">
+    <div className="ucc-hero-image" />
+    <div className="ucc-hero-shade" />
+    <div className="ucc-shell ucc-hero-content">
+      <div className="ucc-eyebrow ucc-eyebrow-light"><span /> A PLACE TO BELONG. A FAITH TO GROW.</div>
+      <h1>Find your place.<br /><em>Grow in faith.</em></h1>
+      <p>We are a church family in Gikondo, Kigali, growing together in Christ and sharing God's love with our community.</p>
+      <div className="ucc-hero-actions">
+        <Link to="/contact" className="ucc-button ucc-button-gold">Plan your visit <ArrowRight size={17} /></Link>
+        <Link to="/about" className="ucc-button ucc-button-outline"><Play size={15} /> Discover UCC</Link>
       </div>
+      <div className="ucc-hero-location"><MapPin size={15} /> Gikondo, Kigali · Everyone is welcome</div>
     </div>
-  );
-};
+    <div className="ucc-hero-note"><span>01</span><i /> FAITH · COMMUNITY · SERVICE</div>
+  </section>
+);
 
 export default Hero;

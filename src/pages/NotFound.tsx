@@ -1,27 +1,7 @@
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
+import { ArrowLeft, Compass } from 'lucide-react';
 
-const NotFound = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
-  }, [location.pathname]);
-
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
-      </div>
-    </div>
-  );
-};
-
+const NotFound = () => <div className="ucc-site"><Navigation/><main className="ucc-not-found"><div className="ucc-not-found-orbit"><Compass size={54}/><span>404</span></div><span className="ucc-eyebrow"><span/> THIS PAGE ISN’T HERE</span><h1>Let’s find your<br/><em>way back.</em></h1><p>The page may have moved, or the address may be incorrect. You can return to the homepage and continue exploring UCC.</p><Link to="/" className="ucc-button ucc-button-gold"><ArrowLeft size={17}/> Back to home</Link></main><Footer/></div>;
 export default NotFound;

@@ -15,39 +15,11 @@ const Gallery = () => {
     ...mainImages.map(img => `/images/${img}`),
     ...instaImages.map(img => `/images/United Christian Church Gikondo (UCC) (@ucconline__) • Instagram photos and videos_files/${img}`)
   ];
-
-  return (
-    <div className="min-h-screen bg-white">
-      <Navigation />
-      <div className="text-white py-32 mb-8 rounded-b-3xl shadow-xl" style={{
-        backgroundImage: `url('/images/ucconline___14030707_191708224.jpg')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Church Life Gallery</h1>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            Explore moments from our vibrant community, worship, and service.
-          </p>
-        </div>
-      </div>
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-          {allImages.map((src, idx) => (
-            <div key={src} className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-2xl shadow-lg bg-white/80 hover:shadow-2xl transition-shadow duration-300 group">
-              <img
-                src={src}
-                alt={`Gallery image ${idx+1}`}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 group-hover:opacity-90"
-                loading="lazy"
-              />
-            </div>
-          ))}
-        </div>
-      </section>
-      <Footer />
-    </div>
-  );
+  return <div className="ucc-site"><Navigation/><main>
+    <section className="ucc-page-hero ucc-page-hero-gallery"><div className="ucc-shell ucc-page-hero-content"><span className="ucc-eyebrow ucc-eyebrow-light"><span/> MOMENTS AT UCC</span><h1>Life is better<br/><em>when shared.</em></h1><p>A collection of moments from worship, fellowship and church life.</p><div className="ucc-breadcrumb"><a href="/">Home</a><span>/</span> Gallery</div></div></section>
+    <section className="ucc-page-section"><div className="ucc-shell"><div className="ucc-section-heading ucc-section-heading-row"><div><span className="ucc-eyebrow"><span/> OUR COMMUNITY</span><h2>Small moments. <em>Shared faith.</em></h2><p>Explore photographs from the UCC community.</p></div><span className="ucc-gallery-count">{allImages.length} PHOTOS</span></div>
+      <div className="ucc-gallery-grid">{allImages.map((src,idx)=><a className="ucc-gallery-item" href={src} target="_blank" rel="noreferrer" key={src}><img src={src} alt={`United Christian Church community moment ${idx+1}`} loading="lazy"/><span>0{(idx%9)+1}</span></a>)}</div>
+    </div></section>
+  </main><Footer/></div>;
 };
-
-export default Gallery; 
+export default Gallery;
