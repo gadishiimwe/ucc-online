@@ -50,13 +50,16 @@ const Index = () => {
               <p>Our heart is simple: love God, care for people, grow in truth and make a difference.</p>
             </div>
             <div className="ucc-pillars-grid">
-              {pillars.map((pillar) => (
+              {pillars.map((pillar) => {
+              const Icon = pillar.icon;
+              return (
                 <article className="ucc-pillar-card" key={pillar.number}>
-                  <div className="ucc-pillar-top"><span>{pillar.number}</span><pillar.icon size={24} strokeWidth={1.6} /></div>
+                  <div className="ucc-pillar-top"><span>{pillar.number}</span><Icon size={24} strokeWidth={1.6} /></div>
                   <h3>{pillar.title}</h3>
                   <p>{pillar.text}</p>
                 </article>
-              ))}
+              );
+            })}
             </div>
           </div>
         </section>
