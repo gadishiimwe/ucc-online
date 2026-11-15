@@ -1,118 +1,20 @@
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import { ArrowRight, Users, Heart, Music2, HandHeart, BookOpen, Baby } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const Ministries = () => {
-  const ministries = [
-    {
-      name: "Youth Ministry",
-      description: "Empowering young people to grow in faith through engaging activities, mentorship, and biblical teaching.",
-      image: "/images/ucconline___14030707_191402737.jpg",
-      contact: "Pastor Mary Johnson"
-    },
-    {
-      name: "Women's Ministry",
-      description: "Creating a supportive community where women can grow spiritually, build friendships, and serve together.",
-      image: "/images/ucconline___14030707_191402771.jpg",
-      contact: "Sarah Wilson"
-    },
-    {
-      name: "Men's Ministry",
-      description: "Building brotherhood and spiritual growth through Bible study, fellowship, and community service.",
-      image: "/images/ucconline___14030707_191402796.jpg",
-      contact: "David Thompson"
-    },
-    {
-      name: "Children's Ministry",
-      description: "Nurturing young hearts with age-appropriate Bible lessons, crafts, and activities in a safe, loving environment.",
-      image: "/images/ucconline___14030707_191402817.jpg",
-      contact: "Lisa Brown"
-    },
-    {
-      name: "Worship Ministry",
-      description: "Leading the congregation in heartfelt worship through music, vocals, and technical support.",
-      image: "/images/ucconline___14030707_191402830.jpg",
-      contact: "Michael Davis"
-    },
-    {
-      name: "Outreach Ministry",
-      description: "Serving our community through food drives, mission trips, and local partnerships.",
-      image: "/images/ucconline___14030707_191402845.jpg",
-      contact: "Pastor John Smith"
-    }
-  ];
+const ministries = [
+  { title: 'Youth & young people', text: 'A place to build friendships, ask questions and grow in faith with others.', image: '/images/ucconline___14030707_191402737.jpg', icon: Users },
+  { title: 'Women’s fellowship', text: 'Encouragement, connection and opportunities to grow and serve together.', image: '/images/ucconline___14030707_191402771.jpg', icon: Heart },
+  { title: 'Men’s fellowship', text: 'Build meaningful relationships and encourage one another in a life of faith.', image: '/images/ucconline___14030707_191402796.jpg', icon: Users },
+  { title: 'Children', text: 'Help children discover biblical stories, kindness and the love of God.', image: '/images/ucconline___14030707_191402817.jpg', icon: Baby },
+  { title: 'Worship', text: 'Use music, creativity and practical gifts to help create a welcoming worship experience.', image: '/images/ucconline___14030707_191402830.jpg', icon: Music2 },
+  { title: 'Community service', text: 'Put faith into action by caring for neighbours and serving the wider community.', image: '/images/ucconline___14030707_191402845.jpg', icon: HandHeart },
+];
 
-  return (
-    <div className="min-h-screen bg-white">
-      <Navigation />
-      
-      {/* Header */}
-      <div className="text-white py-32" style={{
-        backgroundImage: `url('/images/ucconline___14030707_191708224.jpg')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-center">Ministries</h1>
-          <p className="text-center text-blue-100 mt-4 text-lg">
-            Discover opportunities to grow, serve, and connect
-          </p>
-        </div>
-      </div>
-
-      {/* Ministries Grid */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Ministries</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Whether you're looking to deepen your faith, serve others, or build meaningful relationships, 
-              we have a ministry where you can belong and make a difference.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {ministries.map((ministry, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <img 
-                  src={ministry.image} 
-                  alt={ministry.name}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{ministry.name}</h3>
-                  <p className="text-gray-700 mb-4">{ministry.description}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-blue-800 font-medium">
-                      Contact: {ministry.contact}
-                    </span>
-                  </div>
-                  <button className="w-full mt-4 bg-blue-800 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">
-                    Get Involved
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-16 bg-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Ready to Get Involved?</h2>
-          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            We believe everyone has gifts and talents that can make a difference. 
-            Contact us to learn more about how you can contribute to our ministries.
-          </p>
-          <button className="bg-blue-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200">
-            Contact Us Today
-          </button>
-        </div>
-      </section>
-
-      <Footer />
-    </div>
-  );
-};
-
+const Ministries = () => <div className="ucc-site"><Navigation/><main>
+  <section className="ucc-page-hero ucc-page-hero-ministries"><div className="ucc-shell ucc-page-hero-content"><span className="ucc-eyebrow ucc-eyebrow-light"><span/> FIND YOUR PLACE</span><h1>There’s room for<br/><em>everyone to grow.</em></h1><p>Discover ways to connect, build relationships and serve with the UCC family.</p><div className="ucc-breadcrumb"><Link to="/">Home</Link><span>/</span> Ministries</div></div></section>
+  <section className="ucc-page-section"><div className="ucc-shell"><div className="ucc-section-heading ucc-section-heading-center"><span className="ucc-eyebrow"><span/> GROW · CONNECT · SERVE</span><h2>Find a place to <em>belong.</em></h2><p>Explore some of the ways people can connect and contribute to church life. Contact UCC to confirm current groups and activities.</p></div><div className="ucc-ministry-grid">{ministries.map(({title,text,image,icon:Icon},i)=><article className="ucc-ministry-card" key={title}><div className="ucc-ministry-image"><img src={image} alt={title} loading="lazy"/><span>0{i+1}</span></div><div className="ucc-ministry-copy"><div className="ucc-info-icon"><Icon size={21}/></div><h3>{title}</h3><p>{text}</p><Link to="/contact" className="ucc-text-link">Ask about joining <ArrowRight size={16}/></Link></div></article>)}</div></div></section>
+  <section className="ucc-page-section ucc-page-section-soft"><div className="ucc-shell ucc-service-callout"><div><span className="ucc-eyebrow"><span/> YOUR GIFTS MATTER</span><h2>There’s a way for you <em>to make a difference.</em></h2><p>Whether you enjoy welcoming people, working with children, music, practical support or encouraging others, we’d love to help you find a meaningful next step.</p></div><Link to="/contact" className="ucc-button ucc-button-gold">Get involved <ArrowRight size={17}/></Link></div></section>
+</main><Footer/></div>;
 export default Ministries;
