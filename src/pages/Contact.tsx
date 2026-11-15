@@ -1,209 +1,35 @@
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import { Mail, MapPin, Calendar } from 'lucide-react';
+import { Mail, MapPin, CalendarDays, Phone, ArrowUpRight, Send, Clock3 } from 'lucide-react';
 import { useState } from 'react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const [formData,setFormData]=useState({name:'',email:'',subject:'general',message:''});
+  const handleSubmit=(e:React.FormEvent)=>{
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
-    alert('Thank you for your message! We will get back to you soon.');
+    const subject=encodeURIComponent('UCC website enquiry: '+formData.subject);
+    const body=encodeURIComponent('Name: '+formData.name+'\nEmail: '+formData.email+'\n\n'+formData.message);
+    window.location.href='mailto:info@unitedchristianchurch.org?subject='+subject+'&body='+body;
   };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  return (
-    <div className="min-h-screen bg-white">
-      <Navigation />
-      
-      {/* Header */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-center">Contact Us</h1>
-          <p className="text-center text-blue-100 mt-4 text-lg">
-            We'd love to hear from you and answer any questions
-          </p>
-        </div>
-      </div>
-
-      {/* Contact Information */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Send Us a Message</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                    placeholder="Your full name"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                    Subject
-                  </label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                  >
-                    <option value="">Select a subject</option>
-                    <option value="general">General Inquiry</option>
-                    <option value="prayer">Prayer Request</option>
-                    <option value="membership">Membership Information</option>
-                    <option value="ministry">Ministry Involvement</option>
-                    <option value="events">Events & Programs</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                    placeholder="Please share your message or questions with us..."
-                  />
-                </div>
-                
-                <button
-                  type="submit"
-                  className="w-full bg-blue-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
-
-            {/* Contact Information */}
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Get in Touch</h2>
-              
-              <div className="space-y-8">
-                <div className="flex items-start">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                    <MapPin className="w-6 h-6 text-blue-800" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Visit Us</h3>
-                    <p className="text-gray-700">
-                      Kigali, RWANDA<br />
-                      Gikondo-merez
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                    <Mail className="w-6 h-6 text-blue-800" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Email Us</h3>
-                    <p className="text-gray-700">
-                      info@unitedchristianchurch.org<br />
-                      pastor@unitedchristianchurch.org<br />
-                      <span className='block mt-2 font-bold'>Phone: +250788 674 367</span>
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                    <Calendar className="w-6 h-6 text-blue-800" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Service Times</h3>
-                    <p className="text-gray-700">
-                      Sunday Worship: 10:00 AM<br />
-                      Bible Study: Wednesday 7:00 PM<br />
-                      Youth Service: Friday 6:00 PM
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Map Placeholder */}
-              <div className="mt-8">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Find Us</h3>
-                <div className="rounded-lg overflow-hidden shadow-lg" style={{height: '300px'}}>
-                  <iframe
-                    title="Kigali Gikondo Map"
-                    src="https://www.google.com/maps?q=Kigali%2C%20Gikondo&output=embed"
-                    width="100%"
-                    height="300"
-                    style={{border:0}}
-                    allowFullScreen={true}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  ></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
-    </div>
-  );
+  const handleChange=(e:React.ChangeEvent<HTMLInputElement|HTMLTextAreaElement|HTMLSelectElement>)=>setFormData({...formData,[e.target.name]:e.target.value});
+  return <div className="ucc-site"><Navigation/><main>
+    <section className="ucc-page-hero ucc-page-hero-contact"><div className="ucc-shell ucc-page-hero-content"><span className="ucc-eyebrow ucc-eyebrow-light"><span/> WE’RE HERE TO HELP</span><h1>Let’s start a<br/><em>conversation.</em></h1><p>Have a question, a prayer request or want to plan your first visit? We’d love to hear from you.</p><div className="ucc-breadcrumb"><a href="/">Home</a><span>/</span> Contact</div></div></section>
+    <section className="ucc-page-section"><div className="ucc-shell ucc-contact-layout">
+      <div className="ucc-contact-form-panel"><span className="ucc-eyebrow"><span/> SEND A MESSAGE</span><h2>How can we <em>help?</em></h2><p>Share a little with us and your email app will open with your message ready to send.</p><form className="ucc-contact-form" onSubmit={handleSubmit}>
+        <label>Full name<input name="name" value={formData.name} onChange={handleChange} required placeholder="Your name"/></label>
+        <label>Email address<input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="you@example.com"/></label>
+        <label>What would you like to talk about?<select name="subject" value={formData.subject} onChange={handleChange}><option value="general">General question</option><option value="visit">Planning a visit</option><option value="prayer">Prayer request</option><option value="ministry">Getting involved</option><option value="other">Something else</option></select></label>
+        <label>Your message<textarea name="message" value={formData.message} onChange={handleChange} required rows={5} placeholder="Write your message here..."/></label>
+        <button className="ucc-button ucc-button-gold" type="submit">Prepare email <Send size={16}/></button>
+      </form></div>
+      <aside className="ucc-contact-aside"><span className="ucc-eyebrow ucc-eyebrow-light"><span/> GET IN TOUCH</span><h2>We’d love to <em>meet you.</em></h2><p>Reach out or come and see us in Gikondo, Kigali.</p>
+        <a className="ucc-contact-detail" href="mailto:info@unitedchristianchurch.org"><span><Mail size={19}/></span><div><small>EMAIL</small><strong>info@unitedchristianchurch.org</strong></div><ArrowUpRight size={16}/></a>
+        <a className="ucc-contact-detail" href="tel:+250788674367"><span><Phone size={19}/></span><div><small>PHONE</small><strong>+250 788 674 367</strong></div><ArrowUpRight size={16}/></a>
+        <div className="ucc-contact-detail"><span><MapPin size={19}/></span><div><small>LOCATION</small><strong>Gikondo, Kigali, Rwanda</strong></div></div>
+        <div className="ucc-contact-detail"><span><Clock3 size={19}/></span><div><small>WEEKLY GATHERINGS</small><strong>Sunday 10:00 AM</strong><strong>Wednesday 7:00 PM · Friday 6:00 PM</strong></div></div>
+      </aside>
+    </div></section>
+    <section className="ucc-map-section"><div className="ucc-shell ucc-map-heading"><div><span className="ucc-eyebrow"><span/> FIND US</span><h2>Come say <em>hello.</em></h2></div><a href="https://www.google.com/maps/search/?api=1&query=United+Christian+Church+Gikondo+Kigali" target="_blank" rel="noreferrer" className="ucc-text-link">Open directions <ArrowUpRight size={16}/></a></div><div className="ucc-shell"><div className="ucc-map-frame"><iframe title="Map showing Gikondo, Kigali" src="https://www.google.com/maps?q=Gikondo%2C%20Kigali%2C%20Rwanda&output=embed" width="100%" height="360" style={{border:0}} loading="lazy" referrerPolicy="no-referrer-when-downgrade"/></div></div></section>
+  </main><Footer/></div>;
 };
-
 export default Contact;
