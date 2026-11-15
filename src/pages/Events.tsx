@@ -1,117 +1,18 @@
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import { Calendar, MapPin } from 'lucide-react';
+import { CalendarDays, Clock3, MapPin, ArrowRight, Users, BookOpen, Music2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const Events = () => {
-  const upcomingEvents = [
-    {
-      title: "Christmas Service",
-      date: "December 25, 2024",
-      time: "10:00 AM",
-      location: "Main Sanctuary",
-      description: "Join us for a special Christmas celebration with music, readings, and fellowship.",
-      category: "Special Service"
-    },
-    {
-      title: "New Year Prayer Night",
-      date: "December 31, 2024",
-      time: "9:00 PM",
-      location: "Main Sanctuary",
-      description: "Welcome the new year with prayer, worship, and reflection on God's goodness.",
-      category: "Prayer"
-    },
-    {
-      title: "Youth Winter Retreat",
-      date: "January 15-17, 2025",
-      time: "All Day",
-      location: "Mountain View Retreat Center",
-      description: "A weekend retreat for youth ages 13-18 focused on faith, friendship, and fun.",
-      category: "Youth"
-    },
-    {
-      title: "Women's Bible Study",
-      date: "Every Tuesday",
-      time: "7:00 PM",
-      location: "Fellowship Hall",
-      description: "Join us for weekly Bible study and fellowship with other women in our community.",
-      category: "Bible Study"
-    }
-  ];
+const gatherings = [
+  { day: 'SUNDAY', title: 'Sunday Worship', time: '10:00 AM', detail: 'Come together for worship, teaching and fellowship.', icon: Music2, featured: true },
+  { day: 'WEDNESDAY', title: 'Bible Study', time: '7:00 PM', detail: 'Spend time in Scripture and grow in understanding together.', icon: BookOpen },
+  { day: 'FRIDAY', title: 'Youth Service', time: '6:00 PM', detail: 'A space for young people to connect, learn and grow in faith.', icon: Users },
+];
 
-  return (
-    <div className="min-h-screen bg-white">
-      <Navigation />
-      
-      {/* Header */}
-      <div className="text-white py-32" style={{
-        backgroundImage: `url('/images/ucconline___14030707_191708224.jpg')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-center">Events</h1>
-          <p className="text-center text-blue-100 mt-4 text-lg">
-            Join us for worship, fellowship, and community events
-          </p>
-        </div>
-      </div>
-
-      {/* Upcoming Events */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Upcoming Events</h2>
-          <div className="space-y-8">
-            {upcomingEvents.map((event, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center mb-2">
-                      <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mr-3">
-                        {event.category}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">{event.title}</h3>
-                    <p className="text-gray-700 mb-4">{event.description}</p>
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-2 sm:space-y-0 text-sm text-gray-600">
-                      <div className="flex items-center">
-                        <Calendar className="w-4 h-4 mr-2" />
-                        <span>{event.date} at {event.time}</span>
-                      </div>
-                      <div className="flex items-center">
-                        <MapPin className="w-4 h-4 mr-2" />
-                        <span>{event.location}</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mt-4 md:mt-0 md:ml-6">
-                    <button className="bg-blue-800 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">
-                      Learn More
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Event Calendar */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">Event Calendar</h2>
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <div className="text-center text-gray-600">
-              <Calendar className="w-16 h-16 mx-auto mb-4 text-blue-800" />
-              <p className="text-lg mb-2">Full Calendar Integration</p>
-              <p className="text-sm">Connect with Google Calendar or other calendar systems for a complete view of all church events.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Footer />
-    </div>
-  );
-};
-
+const Events = () => <div className="ucc-site"><Navigation/><main>
+  <section className="ucc-page-hero ucc-page-hero-events"><div className="ucc-shell ucc-page-hero-content"><span className="ucc-eyebrow ucc-eyebrow-light"><span/> LIFE TOGETHER</span><h1>Make time for<br/><em>what matters.</em></h1><p>Gather with us for worship, learning and meaningful fellowship.</p><div className="ucc-breadcrumb"><Link to="/">Home</Link><span>/</span> Events</div></div></section>
+  <section className="ucc-page-section"><div className="ucc-shell"><div className="ucc-section-heading ucc-section-heading-center"><span className="ucc-eyebrow"><span/> WEEKLY GATHERINGS</span><h2>There’s a place for <em>you here.</em></h2><p>Here are the regular gathering times currently shared by UCC.</p></div><div className="ucc-gathering-grid">{gatherings.map(({day,title,time,detail,icon:Icon,featured})=><article className={featured?'ucc-gathering-card featured':'ucc-gathering-card'} key={day}><span className="ucc-service-day">{day}</span><div className="ucc-info-icon"><Icon size={23}/></div><h3>{title}</h3><div className="ucc-service-time"><Clock3 size={17}/>{time}</div><p>{detail}</p><div className="ucc-gathering-foot"><span><MapPin size={14}/> Gikondo, Kigali</span><CalendarDays size={17}/></div></article>)}</div></div></section>
+  <section className="ucc-page-section ucc-page-section-soft"><div className="ucc-shell ucc-event-note"><div className="ucc-event-note-icon"><CalendarDays size={28}/></div><div><span className="ucc-eyebrow"><span/> SPECIAL EVENTS</span><h2>Stay in the <em>loop.</em></h2><p>Special event dates and one-off programmes are shared through the church. Contact the team or follow UCC online for the latest announcements before making plans.</p><div className="ucc-inline-actions"><Link to="/contact" className="ucc-button ucc-button-gold">Ask about an event <ArrowRight size={17}/></Link><a href="https://www.instagram.com/ucconline__/" target="_blank" rel="noreferrer" className="ucc-text-link">Follow updates <ArrowRight size={16}/></a></div></div></div></section>
+  <section className="ucc-page-cta"><div className="ucc-shell ucc-page-cta-inner"><div><span className="ucc-eyebrow ucc-eyebrow-light"><span/> COME AS YOU ARE</span><h2>We’ll save you <em>a seat.</em></h2><p>We look forward to meeting you at a gathering.</p></div><Link to="/contact" className="ucc-button ucc-button-light">Plan your visit <ArrowRight size={17}/></Link></div></section>
+</main><Footer/></div>;
 export default Events;
